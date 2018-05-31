@@ -9,23 +9,35 @@ import PokemonCard from './../../containers/PokemonCard/index'
 class App extends Component {
 
 componentDidMount() {
-  fetchPokemonTypes().then( data => this.props.addPokemonType(data))
+  // fetchPokemonTypes().then( data => this.props.addPokemonType(data))
+}
+
+loadingImage = () => {
+  if(!this.props.types.length) {
+    return (
+      <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+    )
   }
+}
 
   render() {
     return (
       <div className='App'>
         <h1 className='header'> POKéDEX </h1>
-        <FakeContainer />
+        {this.loadingImage()}
         <PokemonCard />
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) => ({
+  types: state.types
+})
+
 const mapDispatchToProps = (dispatch) => ({
   addPokemonType: (types) => dispatch(addPokemonType(types))
 })
 
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
