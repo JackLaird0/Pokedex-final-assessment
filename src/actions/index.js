@@ -5,9 +5,10 @@ export const addPokemonType = (types) => ({
   types
 })
 
-export const addPokemon = (pokemon) => ({
+export const addPokemon = (pokemon, pokeType) => ({
   type: 'ADD_POKEMON',
-  pokemon
+  pokemon,
+  pokeType
 })
 
 export const selectedType = (selectedType) => ({
