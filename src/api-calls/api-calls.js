@@ -5,8 +5,11 @@ export const fetchPokemonTypes = () => {
     .catch( error => console.log(error))
 }
 
-export const fetchPokemon = async (pokeId) => {
-  const response = await fetch(`http://localhost:3001/pokemon/${pokeId}`);
-  const pokemon = await response.json();
-  return pokemon
+export const displayPokemon = (pokemon) => {
+  const selectedPokemon = pokemon.map( async (pokeId) => {
+    const response = await fetch(`http://localhost:3001/pokemon/${pokeId}`);
+    const pokeData = await response.json();
+    return pokeData
+  })
+  return Promise.all(selectedPokemon)
 }
