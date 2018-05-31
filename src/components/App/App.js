@@ -9,7 +9,7 @@ import PokemonCard from './../../containers/PokemonCard/index'
 class App extends Component {
 
 componentDidMount() {
-  // fetchPokemonTypes().then( data => this.props.addPokemonType(data))
+  fetchPokemonTypes().then( data => this.props.addPokemonType(data))
 }
 
 loadingImage = () => {
