@@ -17,3 +17,7 @@
   background-color: rgb(180, 179, 185);
   height: 100vh;
 }
+
+img {
+  height: 150px;
+}
