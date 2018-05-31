@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPokemon } from './../../api-calls/api-calls';
 import { displayPokemon, findPokemonType } from './../../api-calls/api-calls';
-import { addPokemon, selectedType } from './../../actions/index'
+import { addPokemon, selectedType } from './../../actions/index';
+import './pokemonCard.css'
 
 class PokemonCard extends Component{
 
@@ -31,14 +32,14 @@ class PokemonCard extends Component{
     const displayType = this.props.types.map(type => {
       if (this.props.selectedType === type.name) {
         return (
-          <div onClick={() => this.handleClick(type.pokemon, '')}>
+          <div className='type-label selected' onClick={() => this.handleClick(type.pokemon, '')}>
             {type.name}
             {this.displaySelectedPokemon(type.name)}
           </div>
         )
       } else {
         return (
-          <div onClick={() => this.handleClick(type.pokemon, type.name)}>
+          <div className='type-label' onClick={() => this.handleClick(type.pokemon, type.name)}>
             {type.name}
           </div>
         )
@@ -49,7 +50,7 @@ class PokemonCard extends Component{
 
   render() {
     return (
-      <div>
+      <div className='pokemon-card-container'>
         {this.displayPokemonTypes()}
       </div>
     )
