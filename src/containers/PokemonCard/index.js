@@ -9,13 +9,12 @@ class PokemonCard extends Component{
 
   handleClick = async (pokemonType, type) => {
     const fetchPokemon = await displayPokemon(pokemonType);
-    this.props.addPokemon(fetchPokemon);
-    console.log(this.props)
     this.props.selectType(type);
+    this.props.addPokemon(fetchPokemon, this.props.selectedType);
   }
 
   displaySelectedPokemon = (type) => {
-    const pokeInfo = this.props.pokemon.map((poke) => {
+    const pokeInfo = this.props.pokemon[this.props.selectedType].map((poke) => {
       return (
         <div>
           <p>Name: {poke.name}</p>
@@ -64,7 +63,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  addPokemon: (pokemon) => dispatch(addPokemon(pokemon)),
+  addPokemon: (pokemon, pokeType) => dispatch(addPokemon(pokemon, pokeType)),
   selectType: (type) => dispatch(selectedType(type))
 })
 
