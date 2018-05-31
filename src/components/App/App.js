@@ -15,7 +15,14 @@ componentDidMount() {
 loadingImage = () => {
   if(!this.props.types.length) {
     return (
-      <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+      <div> 
+        <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+        <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+        <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+        <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+        <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+        <img src="https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif" alt="Pika Running"/>
+      </div>
     )
   }
 }
