@@ -22,8 +22,10 @@ loadingImage = () => {
 
   render() {
     return (
-      <div className='App'>
-        <h1 className='header'> POKéDEX </h1>
+      <div className='main'>
+        <div className='App'>
+          <h1 className='header'> POKéDEX </h1>
+        </div>
         {this.loadingImage()}
         <PokemonCard />
       </div>
