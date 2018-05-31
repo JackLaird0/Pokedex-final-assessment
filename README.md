@@ -33,3 +33,4 @@ Display the following for each pokemon:
 
 * Testing (actions, reducers, containers and components)
 * Middleware (thunks or sagas)
+# Pokedex-final-assessment
