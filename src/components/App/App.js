@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import FakeContainer from '../../containers/FakeContainer/'
+import FakeContainer from '../../containers/FakeContainer/';
+import { fetchPokemonTypes } from './../../api-calls/api-calls'
 
 class App extends Component {
+
+componentDidMount() {
+  fetchPokemonTypes().then( data => console.log(data))
+  }
 
   render() {
     return (
